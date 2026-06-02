@@ -1,0 +1,65 @@
+import { slugify } from "@/lib/slugify";
+
+const pirkanmaaRekoRows = [
+  "Akaa",
+  "Hämeenkyrö",
+  "Ikaalinen",
+  "Kangasala",
+  "Kangasala (Ruutana)",
+  "Kihniö",
+  "Lempäälä",
+  "Mänttä-Vilppula",
+  "Nokia",
+  "Orivesi",
+  "Pälkäne",
+  "Parkano",
+  "Pirkkala",
+  "Ruovesi",
+  "Ruovesi (Visuvesi)",
+  "Sastamala (Häijää)",
+  "Tampere (Ahlman)",
+  "Tampere (Hakametsä)",
+  "Tampere (Hervanta)",
+  "Tampere (Lielahti)",
+  "Tampere (Tammelantori)",
+  "Tampere (Teisko)",
+  "Tampere (Tohloppi)",
+  "Urjala",
+  "Valkeakoski",
+  "Vesilahti",
+  "Virrat",
+  "Ylöjärvi",
+] as const;
+
+export const rekoSeedPirkanmaa = pirkanmaaRekoRows.map((name, index) => {
+  const placeSlug = `reko-${slugify(name)}`;
+
+  return {
+    id: `fi-reko-pirkanmaa-${index + 1}-${placeSlug}`,
+    name: `REKO ${name}`,
+    slug: placeSlug,
+    description:
+      "REKO-lähiruokarengas. Tiedot on tuotu Lähituottajat.fi:n Pirkanmaa-REKO-listasta ja vaativat vielä profiilikohtaisen tarkistuksen.",
+    type: "reko",
+    subtype: "lahiruokarengas",
+    sales_model: "suoraan_tuottajalta",
+    address: null,
+    postal_code: null,
+    municipality: name.split(" (")[0],
+    region: "Pirkanmaa",
+    latitude: null,
+    longitude: null,
+    products: ["vaihtelee"],
+    opening_hours: null,
+    seasonality: "ympari_vuoden",
+    website_url: null,
+    facebook_url: null,
+    instagram_url: null,
+    email: null,
+    phone: null,
+    source_name: "Lähituottajat.fi",
+    source_url: "https://lahituottajat.fi/maakunnat/pirkanmaa/",
+    verification_status: "needs_review",
+    last_checked_at: "2026-06-02",
+  };
+});
