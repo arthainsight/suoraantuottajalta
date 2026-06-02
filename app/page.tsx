@@ -45,10 +45,14 @@ export default function HomePage() {
 
       <section className="section">
         <div className="container">
-          <div className="eyebrow">Poiminnat</div>
-          <h2>Ensimmäiset kohteet</h2>
+          <div className="eyebrow">Hakemiston kohteet</div>
+          <h2>Kaikki nykyiset kohteet</h2>
+          <p>
+            MVP-vaiheessa näytämme etusivulla kaikki nykyiset kohteet, jotta
+            uudet lisäykset kuten Majvik näkyvät heti myös Vercelissä.
+          </p>
           <div className="place-grid" style={{ marginTop: 24 }}>
-            {places.slice(0, 3).map((place) => (
+            {places.map((place) => (
               <PlaceCard key={place.id} place={place} />
             ))}
           </div>
