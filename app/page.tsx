@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { SearchBar } from "@/components/SearchBar";
 import { PlaceCard } from "@/components/PlaceCard";
+import { RegionLinks } from "@/components/RegionLinks";
 import { getPlaces } from "@/lib/places";
 
 export default function HomePage() {
@@ -51,6 +52,7 @@ export default function HomePage() {
               <PlaceCard key={place.id} place={place} />
             ))}
           </div>
+          <RegionLinks />
         </div>
       </section>
 
