@@ -7,6 +7,8 @@ import lahituottajatSeedData5a from "@/data/lahituottajat.seed.5a.json";
 import lahituottajatSeedData5b from "@/data/lahituottajat.seed.5b.json";
 import { rekoSeedInitial } from "@/data/reko.seed.initial";
 import { rekoSeedUusimaaMissing } from "@/data/reko.seed.uusimaa.missing";
+import { rekoSeedPirkanmaa } from "@/data/reko.seed.pirkanmaa";
+import { rekoSeedVarsinaisSuomi } from "@/data/reko.seed.varsinais-suomi";
 import { regions } from "@/lib/regions";
 import { slugify } from "@/lib/slugify";
 
@@ -60,6 +62,8 @@ export function getPlaces(): Place[] {
     ...(lahituottajatSeedData5b as Place[]),
     ...(rekoSeedInitial as Place[]),
     ...(rekoSeedUusimaaMissing as Place[]),
+    ...(rekoSeedPirkanmaa as Place[]),
+    ...(rekoSeedVarsinaisSuomi as Place[]),
   ]);
 }
 
