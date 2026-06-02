@@ -11,6 +11,8 @@ export function Header() {
           <Link href="/kartta">Kartta</Link>
           <Link href="/hakemisto">Hakemisto</Link>
           <Link href="/lisaa-kohde">Lisää kohde</Link>
+          <Link href="/tietoa">Tietoa</Link>
+          <Link href="/lahteet">Lähteet</Link>
         </nav>
       </div>
     </header>
