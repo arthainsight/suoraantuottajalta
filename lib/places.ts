@@ -1,5 +1,6 @@
 import placesData from "@/data/places.sample.json";
 import lahituottajatSeedData from "@/data/lahituottajat.seed.json";
+import lahituottajatSeedData2 from "@/data/lahituottajat.seed.2.json";
 import { regions } from "@/lib/regions";
 import { slugify } from "@/lib/slugify";
 
@@ -32,7 +33,11 @@ export type Place = {
 };
 
 export function getPlaces(): Place[] {
-  return [...(placesData as Place[]), ...(lahituottajatSeedData as Place[])];
+  return [
+    ...(placesData as Place[]),
+    ...(lahituottajatSeedData as Place[]),
+    ...(lahituottajatSeedData2 as Place[]),
+  ];
 }
 
 export function getPlaceBySlug(slug: string): Place | undefined {
