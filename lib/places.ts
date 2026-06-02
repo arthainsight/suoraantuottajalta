@@ -5,6 +5,7 @@ import lahituottajatSeedData3 from "@/data/lahituottajat.seed.3.json";
 import lahituottajatSeedData4 from "@/data/lahituottajat.seed.4.json";
 import lahituottajatSeedData5a from "@/data/lahituottajat.seed.5a.json";
 import lahituottajatSeedData5b from "@/data/lahituottajat.seed.5b.json";
+import { rekoSeedInitial } from "@/data/reko.seed.initial";
 import { regions } from "@/lib/regions";
 import { slugify } from "@/lib/slugify";
 
@@ -36,8 +37,19 @@ export type Place = {
   last_checked_at: string;
 };
 
+function uniqueById(places: Place[]): Place[] {
+  const seen = new Set<string>();
+  return places.filter((place) => {
+    if (seen.has(place.id)) {
+      return false;
+    }
+    seen.add(place.id);
+    return true;
+  });
+}
+
 export function getPlaces(): Place[] {
-  return [
+  return uniqueById([
     ...(placesData as Place[]),
     ...(lahituottajatSeedData as Place[]),
     ...(lahituottajatSeedData2 as Place[]),
@@ -45,7 +57,8 @@ export function getPlaces(): Place[] {
     ...(lahituottajatSeedData4 as Place[]),
     ...(lahituottajatSeedData5a as Place[]),
     ...(lahituottajatSeedData5b as Place[]),
-  ];
+    ...(rekoSeedInitial as Place[]),
+  ]);
 }
 
 export function getPlaceBySlug(slug: string): Place | undefined {
