@@ -1,6 +1,8 @@
 import placesData from "@/data/places.sample.json";
 import lahituottajatSeedData from "@/data/lahituottajat.seed.json";
 import lahituottajatSeedData2 from "@/data/lahituottajat.seed.2.json";
+import lahituottajatSeedData3 from "@/data/lahituottajat.seed.3.json";
+import lahituottajatSeedData4 from "@/data/lahituottajat.seed.4.json";
 import { regions } from "@/lib/regions";
 import { slugify } from "@/lib/slugify";
 
@@ -37,6 +39,8 @@ export function getPlaces(): Place[] {
     ...(placesData as Place[]),
     ...(lahituottajatSeedData as Place[]),
     ...(lahituottajatSeedData2 as Place[]),
+    ...(lahituottajatSeedData3 as Place[]),
+    ...(lahituottajatSeedData4 as Place[]),
   ];
 }
 
