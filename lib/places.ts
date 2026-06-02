@@ -3,6 +3,8 @@ import lahituottajatSeedData from "@/data/lahituottajat.seed.json";
 import lahituottajatSeedData2 from "@/data/lahituottajat.seed.2.json";
 import lahituottajatSeedData3 from "@/data/lahituottajat.seed.3.json";
 import lahituottajatSeedData4 from "@/data/lahituottajat.seed.4.json";
+import lahituottajatSeedData5a from "@/data/lahituottajat.seed.5a.json";
+import lahituottajatSeedData5b from "@/data/lahituottajat.seed.5b.json";
 import { regions } from "@/lib/regions";
 import { slugify } from "@/lib/slugify";
 
@@ -41,6 +43,8 @@ export function getPlaces(): Place[] {
     ...(lahituottajatSeedData2 as Place[]),
     ...(lahituottajatSeedData3 as Place[]),
     ...(lahituottajatSeedData4 as Place[]),
+    ...(lahituottajatSeedData5a as Place[]),
+    ...(lahituottajatSeedData5b as Place[]),
   ];
 }
 
